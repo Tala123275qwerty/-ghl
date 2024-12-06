@@ -1,0 +1,19 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Pages
+      uses: actions/setup-pages@v1
+    - name: Build site
+      run: echo "Hello, World!" > index.html
+    - name: Deploy
+      uses: actions/deploy-pages@v1
